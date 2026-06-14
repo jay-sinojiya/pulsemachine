@@ -29,15 +29,8 @@ Requires Node.js >= 18.0.0. Supports Linux, Windows, and macOS with graceful fal
 
 ## Global Installation (Any PC)
 
-To install this tool globally on any computer, it must be published to the NPM registry first. 
+To install and run the terminal dashboard globally on any computer:
 
-If you are the author, you can publish it by running:
-```bash
-npm login
-npm publish --access public
-```
-
-Once published, anyone can install and run it globally:
 ```bash
 npm install -g pulsemachine
 pulsemachine
