@@ -1,17 +1,17 @@
 {
   "name": "pulsemachine",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Lightweight system monitoring library inspired by Grafana, Netdata, and PM2",
   "license": "MIT",
   "author": "MyOrg",
   "repository": {
     "type": "git",
-    "url": "https://github.com/myorg/monitor-core.git",
+    "url": "https://github.com/jay-sinojiya/pulsemachine.git",
     "directory": "packages/monitor-core"
   },
-  "homepage": "https://github.com/myorg/monitor-core#readme",
+  "homepage": "https://github.com/jay-sinojiya/pulsemachine#readme",
   "bugs": {
-    "url": "https://github.com/myorg/monitor-core/issues"
+    "url": "https://github.com/jay-sinojiya/pulsemachine/issues"
   },
   "keywords": [
     "monitoring",

@@ -1,9 +1,9 @@
 # pulsemachine
 
 [![npm version](https://img.shields.io/npm/v/pulsemachine.svg)](https://www.npmjs.com/package/pulsemachine)
-[![build status](https://github.com/myorg/monitor-core/actions/workflows/ci.yml/badge.svg)](https://github.com/myorg/monitor-core/actions/workflows/ci.yml)
-[![coverage](https://img.shields.io/badge/coverage-%3E80%25-brightgreen)](https://github.com/myorg/monitor-core)
-[![license](https://img.shields.io/npm/l/pulsemachine.svg)](https://github.com/myorg/monitor-core/blob/main/LICENSE)
+[![build status](https://github.com/jay-sinojiya/pulsemachine/actions/workflows/ci.yml/badge.svg)](https://github.com/jay-sinojiya/pulsemachine/actions/workflows/ci.yml)
+[![coverage](https://img.shields.io/badge/coverage-%3E80%25-brightgreen)](https://github.com/jay-sinojiya/pulsemachine)
+[![license](https://img.shields.io/npm/l/pulsemachine.svg)](https://github.com/jay-sinojiya/pulsemachine/blob/main/LICENSE)
 
 Lightweight system monitoring library for Node.js — inspired by Grafana, Netdata, and PM2. Collect CPU, memory, disk, network, process, and Docker metrics with built-in alerts, Prometheus export, WebSocket streaming, and a terminal dashboard.
 

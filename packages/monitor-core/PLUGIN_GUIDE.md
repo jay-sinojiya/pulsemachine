@@ -1,11 +1,11 @@
 # Plugin Development Guide
 
-This guide explains how to build plugins for `@myorg/monitor-core`.
+This guide explains how to build plugins for `pulsemachine`.
 
 ## MonitorPlugin Interface
 
 ```typescript
-import type { MonitorLike, MonitorPlugin, SystemStats } from '@myorg/monitor-core';
+import type { MonitorLike, MonitorPlugin, SystemStats } from 'pulsemachine';
 
 export interface MonitorPlugin {
   name: string;
@@ -62,7 +62,7 @@ import {
   type MonitorLike,
   type MonitorPlugin,
   type SystemStats,
-} from '@myorg/monitor-core';
+} from 'pulsemachine';
 
 interface SlackPluginOptions {
   webhookUrl: string;
@@ -129,11 +129,11 @@ await monitor.start();
 ## Publishing a Community Plugin
 
 1. **Create a standalone npm package** (e.g. `@myorg/monitor-plugin-slack`).
-2. **Declare a peer dependency** on `@myorg/monitor-core` so consumers resolve a single copy.
+2. **Declare a peer dependency** on `pulsemachine` so consumers resolve a single copy.
 3. **Export a factory function** for ergonomic setup:
 
 ```typescript
-import type { MonitorPlugin } from '@myorg/monitor-core';
+import type { MonitorPlugin } from 'pulsemachine';
 
 export function slackAlerts(options: SlackPluginOptions): MonitorPlugin {
   return new SlackAlertPlugin(options);
@@ -154,4 +154,4 @@ npm publish --access public
 - Always clean up in `onStop()` (timers, sockets, file handles).
 - Handle errors internally; a plugin crash should not take down the monitor.
 - Use `onStats` for periodic work; use alert events for threshold reactions.
-- Version your plugin semver independently from `@myorg/monitor-core`.
+- Version your plugin semver independently from `pulsemachine`.

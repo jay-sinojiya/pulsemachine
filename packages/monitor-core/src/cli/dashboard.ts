@@ -85,7 +85,7 @@ export class Dashboard {
   private createLayout(): void {
     this.screen = blessed.screen({
       smartCSR: true,
-      title: '@myorg/monitor-core Dashboard',
+      title: 'pulsemachine Dashboard',
     });
 
     this.headerBox = blessed.box({
@@ -96,7 +96,7 @@ export class Dashboard {
       height: 3,
       tags: true,
       style: { fg: 'white', bg: 'blue' },
-      content: ' {bold}@myorg/monitor-core{/bold} — System Monitor Dashboard ',
+      content: ' {bold}pulsemachine{/bold} — System Monitor Dashboard ',
     });
 
     this.cpuBox = blessed.box({
@@ -178,7 +178,7 @@ export class Dashboard {
     const diskColor = thresholdColor(stats.disk.maxUsagePercent);
 
     this.headerBox.setContent(
-      ` {bold}@myorg/monitor-core{/bold} | Uptime: ${formatUptime(stats.uptime.uptimeSeconds)} | Load: ${stats.uptime.loadAverage.map((l) => l.toFixed(2)).join(', ')} `,
+      ` {bold}pulsemachine{/bold} | Uptime: ${formatUptime(stats.uptime.uptimeSeconds)} | Load: ${stats.uptime.loadAverage.map((l) => l.toFixed(2)).join(', ')} `,
     );
 
     const coreLines = stats.cpu.cores
