@@ -138,6 +138,14 @@ npx monitor
 npx monitor --interval 2000
 ```
 
+> **Note for Local Development:** If you are working within this repository and want to run the dashboard locally, you can build the project and link it:
+> ```bash
+> npm install
+> npm run build
+> npm link
+> monitor
+> ```
+
 ## Prometheus Export
 
 ```typescript
