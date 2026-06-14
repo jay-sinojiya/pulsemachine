@@ -1,6 +1,6 @@
 # Pulse Machine
 
-This repository contains the `@myorg/monitor-core` system monitoring library. 
+This repository contains the `pulsemachine` system monitoring library. 
 
 ## Quick Start
 
@@ -11,7 +11,7 @@ cd packages/monitor-core
 npm install
 npm run build
 npm link
-monitor
+pulsemachine
 ```
 
 For more details, see the [Monitor Core README](./packages/monitor-core/README.md).

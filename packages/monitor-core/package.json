@@ -1,5 +1,5 @@
 {
-  "name": "@myorg/monitor-core",
+  "name": "pulsemachine",
   "version": "0.1.0",
   "description": "Lightweight system monitoring library inspired by Grafana, Netdata, and PM2",
   "license": "MIT",
@@ -68,7 +68,7 @@
     }
   },
   "bin": {
-    "monitor": "./dist/cli/index.js"
+    "pulsemachine": "./dist/cli/index.js"
   },
   "files": [
     "dist",

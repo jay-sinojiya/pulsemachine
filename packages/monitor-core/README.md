@@ -1,16 +1,16 @@
-# @myorg/monitor-core
+# pulsemachine
 
-[![npm version](https://img.shields.io/npm/v/@myorg/monitor-core.svg)](https://www.npmjs.com/package/@myorg/monitor-core)
+[![npm version](https://img.shields.io/npm/v/pulsemachine.svg)](https://www.npmjs.com/package/pulsemachine)
 [![build status](https://github.com/myorg/monitor-core/actions/workflows/ci.yml/badge.svg)](https://github.com/myorg/monitor-core/actions/workflows/ci.yml)
 [![coverage](https://img.shields.io/badge/coverage-%3E80%25-brightgreen)](https://github.com/myorg/monitor-core)
-[![license](https://img.shields.io/npm/l/@myorg/monitor-core.svg)](https://github.com/myorg/monitor-core/blob/main/LICENSE)
+[![license](https://img.shields.io/npm/l/pulsemachine.svg)](https://github.com/myorg/monitor-core/blob/main/LICENSE)
 
 Lightweight system monitoring library for Node.js — inspired by Grafana, Netdata, and PM2. Collect CPU, memory, disk, network, process, and Docker metrics with built-in alerts, Prometheus export, WebSocket streaming, and a terminal dashboard.
 
 ## Quick Start
 
 ```typescript
-import { Monitor } from '@myorg/monitor-core';
+import { Monitor } from 'pulsemachine';
 
 const monitor = new Monitor({ interval: 5000, threshold: { cpu: 80, memory: 90, disk: 85 } });
 const stats = await monitor.getStats();
@@ -22,10 +22,26 @@ Three lines to your first metric. Start continuous polling with `await monitor.s
 ## Installation
 
 ```bash
-npm install @myorg/monitor-core
+npm install pulsemachine
 ```
 
 Requires Node.js >= 18.0.0. Supports Linux, Windows, and macOS with graceful fallback when a metric is unavailable.
+
+## Global Installation (Any PC)
+
+To install this tool globally on any computer, it must be published to the NPM registry first. 
+
+If you are the author, you can publish it by running:
+```bash
+npm login
+npm publish --access public
+```
+
+Once published, anyone can install and run it globally:
+```bash
+npm install -g pulsemachine
+pulsemachine
+```
 
 ## Architecture
 
@@ -125,17 +141,17 @@ console.log(stats.docker.containers);
 
 | Import | Description |
 |---|---|
-| `@myorg/monitor-core` | Core library |
-| `@myorg/monitor-core/cli` | Terminal dashboard |
-| `@myorg/monitor-core/prometheus` | Prometheus adapter |
-| `@myorg/monitor-core/websocket` | WebSocket streaming |
+| `pulsemachine` | Core library |
+| `pulsemachine/cli` | Terminal dashboard |
+| `pulsemachine/prometheus` | Prometheus adapter |
+| `pulsemachine/websocket` | WebSocket streaming |
 
 ## Terminal Dashboard
 
 ```bash
-npx monitor
+npx pulsemachine
 # or with custom interval
-npx monitor --interval 2000
+npx pulsemachine --interval 2000
 ```
 
 > **Note for Local Development:** If you are working within this repository and want to run the dashboard locally, you can build the project and link it:
@@ -143,14 +159,14 @@ npx monitor --interval 2000
 > npm install
 > npm run build
 > npm link
-> monitor
+> pulsemachine
 > ```
 
 ## Prometheus Export
 
 ```typescript
-import { Monitor } from '@myorg/monitor-core';
-import { createPrometheusAdapter } from '@myorg/monitor-core/prometheus';
+import { Monitor } from 'pulsemachine';
+import { createPrometheusAdapter } from 'pulsemachine/prometheus';
 
 const monitor = new Monitor();
 const prom = createPrometheusAdapter(monitor);
@@ -163,7 +179,7 @@ const handler = prom.createMetricsRouter();
 ## WebSocket Streaming
 
 ```typescript
-import { createWebSocketAdapter } from '@myorg/monitor-core/websocket';
+import { createWebSocketAdapter } from 'pulsemachine/websocket';
 
 const ws = createWebSocketAdapter(monitor, { port: 9100 });
 await ws.start();
@@ -174,7 +190,7 @@ Clients subscribe via `{ "type": "subscribe", "namespaces": ["cpu", "memory"] }`
 ## REST API
 
 ```typescript
-import { createRestRouter } from '@myorg/monitor-core';
+import { createRestRouter } from 'pulsemachine';
 
 const router = createRestRouter(monitor);
 // GET /stats, /metrics, /processes, /containers, /health
