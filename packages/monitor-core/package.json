@@ -1,6 +1,6 @@
 {
   "name": "pulsemachine",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Lightweight system monitoring library inspired by Grafana, Netdata, and PM2",
   "license": "MIT",
   "author": "MyOrg",

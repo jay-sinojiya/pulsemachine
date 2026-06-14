@@ -145,6 +145,12 @@ console.log(stats.docker.containers);
 npx pulsemachine
 # or with custom interval
 npx pulsemachine --interval 2000
+
+# check version
+npx pulsemachine --version
+
+# display advanced system information
+npx pulsemachine --info
 ```
 
 > **Note for Local Development:** If you are working within this repository and want to run the dashboard locally, you can build the project and link it:
